@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/imdario/mergo"
 	"k8s.io/apimachinery/pkg/util/yaml"
 )
 
@@ -24,8 +25,11 @@ func main() {
 
 	for name, deployment := range Cfg.Deployments {
 		fmt.Println(name)
-		fmt.Println(deployment.Namespace)
+		mergo.Merge(&deployment.ObjectMeta, Cfg.Metadata)
+
+		fmt.Println(deployment.Annotations)
 		fmt.Println(deployment.Name)
+
 	}
 
 }

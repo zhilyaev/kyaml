@@ -1,6 +1,14 @@
 envs:
   GREETING: HELLO
 
+metadata:
+  name: ingress
+  labels:
+    app.kubernetes.io/component: app1
+    app.kubernetes.io/instance: app1
+    app.kubernetes.io/name: app1
+  annotations:
+    kyaml.app/test: test
 
 pod:
   spec:
