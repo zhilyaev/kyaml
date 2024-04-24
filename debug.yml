@@ -1,0 +1,19 @@
+envs:
+  GREETING: HELLO
+
+
+pod:
+  spec:
+    serviceAccountName: test
+
+Deployments:
+  app@namespace:
+    metadata:
+      annotations:
+        kyaml.app/wave: 1
+      labels:
+        env: prod
+      name: app
+      namespace: namespace
+    spec:
+      replicas: 2
