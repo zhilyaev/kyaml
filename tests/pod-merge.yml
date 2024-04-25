@@ -1,0 +1,13 @@
+metadata:
+  labels:
+    app.kubernetes.io/instance: app1
+    app.kubernetes.io/name: app1
+
+pod:
+  spec:
+    serviceAccountName: test
+
+deployments:
+  app:
+    spec:
+      replicas: 2

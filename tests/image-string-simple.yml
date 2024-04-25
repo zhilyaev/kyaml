@@ -1,0 +1,5 @@
+image: "docker.io/nginx:1.0.0"
+
+deployments:
+  app: {}
+

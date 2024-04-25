@@ -1,0 +1,8 @@
+image:
+  tag: "1.0.0"
+  registry: "docker.io"
+  repository: "nginx"
+
+deployments:
+  app: {}
+

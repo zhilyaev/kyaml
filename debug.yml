@@ -1,27 +1,11 @@
-envs:
-  GREETING: HELLO
-
 metadata:
-  name: ingress
   labels:
-    app.kubernetes.io/component: app1
-    app.kubernetes.io/instance: app1
-    app.kubernetes.io/name: app1
-  annotations:
-    kyaml.app/test: test
+    env: prod
 
-pod:
-  spec:
-    serviceAccountName: test
-
-Deployments:
-  app@namespace:
+deployments:
+  app:
     metadata:
-      annotations:
-        kyaml.app/wave: 1
       labels:
-        env: prod
-      name: app
-      namespace: namespace
+        app: app
     spec:
       replicas: 2
